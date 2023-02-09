@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Vue.js Pet Depot</title>
+</head>
+<body>
+    <div id = 'app'>
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <figure>
+                <img v-bind:src="product.image">
+            </figure>
+            <h2 v-text="product.title"></h2>
+            <p v-text="product.description"></p>
+            <p>Price : {{product.price}}</p>
+        </main>
+
+    </div>
+    <script type = 'text/javascript'>
+
+        //the vue constructor
+        var webstore = new Vue({
+
+            //the 'option object': DOM mounting point
+            el: '#app', // dont forget the , coma
+            data:{
+                sitename: 'Vue.js pet depot',
+                product: {
+                    id: 1001,
+                    title: "ultimate KAMEHAMEHAA",
+                    description : "Goku's speacial final kemhameha against kefela in tournument of power",
+                    price : 2000,
+                    image: "img/kamehameha.jpg"
+
+                }
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>
